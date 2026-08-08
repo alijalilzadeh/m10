@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+
+@font-face {
+  font-family: "TT Fellows";
+  src: url(https://cdn.prod.website-files.com/687df8f…/687dfb9…_TT_Fellows_Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #F4F0EE;
+  margin-top: 4px;
+}
