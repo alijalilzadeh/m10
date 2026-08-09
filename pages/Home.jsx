@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import Slider1 from '../src/assets/HomeSlider/slider1bg.png'
 import Footer from './Footer'
 const Home = () => {
   const [slider, setSlider] = useState(0);
