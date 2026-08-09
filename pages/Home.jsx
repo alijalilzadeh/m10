@@ -1,10 +1,39 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import Footer from './Footer'
-const Home = () => {
+import { useState, useRef } from 'react'
+import Footer from '../components/Footer'
+import Services from '../components/Services'
+import '../src/App.css'
+import '../src/index.css'
+import Finance from '../components/Finance'
+import BirBonus from '../components/BirBonus'
+import Faq from '../components/Faq'
+const Home = ({homeFaq}) => {
+  const [pulMeselesi, setPulMeselesi] = useState('payment')
+  const videoRef = useRef(null);
+  const playVideo = () => {
+    videoRef.current.play();
+  }
+  const stopVideo = () => {
+    videoRef.current.pause();
+  }
+
   const [slider, setSlider] = useState(0);
+  const birEcosistem = [
+    {
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2efe8611c8044db1b95_birbank.svg'
+    },
+    {
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2ef7f217e09341d71ad_birmarket.svg'
+    },
+    {
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2efcee6be6906b71ebc_m10.svg'
+    },
+    {
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2eff3de6dbd58cb76c7_4f706e18b4b7fa8957c6756c576cf437_million.svg'
+    }
+  ]
   const sliderData = [
     {
       imgUrl1: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/691f2063df07f22431bdd7fb_da43949350786b5287fdfa8a54fb2029_hero-section-crossboarder.png',
@@ -26,6 +55,35 @@ const Home = () => {
       Link: 'Ətraflı'
     }
   ]
+
+  const serviceData = [
+    {
+      title: 'Xidmətləri ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c769ab6065f3b8fb3d_12f30e9e51e0f24d0bd12f589967b108_bill.svg'
+    },
+    {
+      title: 'Gedişaqqını ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c702678016c30dca2b_8d079c05f22299a6a8e2be7f620abd3b_bakikart.svg'
+    },
+    {
+      title: 'QR ilə ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7050df87b1dffb148_8cda47652306a58ba0d81875dd10c89e_qr%20pay.svg'
+    }
+  ]
+  const financeData = [
+    {
+      title: 'Xaricə pul köçürmələri',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7e0cfa1a27d51240c_23642c365fd66de4bbb825068de1eece_international.svg'
+    },
+    {
+      title: '25 000 ₼-dək kredit',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c76c9a8584549173ed_37a597f2f2d863ebbf63450a673b5b13_loan.svg'
+    },
+    {
+      title: 'Pul köçürmələri',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c75c647b077e5c7de2_4ded7748d1c419d5530602987c546e54_transfers.svg'
+    }
+  ]
   return (
     <div className='w-full min-h-screen overflow-x-hidden'>
       <Navbar />
@@ -33,7 +91,7 @@ const Home = () => {
         <div style={{ backgroundImage: `url(${sliderData[slider].imgUrl1} )` }} className={`flex bg-no-repeat bg-cover bg-center flex-col items-center h-full justify-center w-[95%] rounded-4xl pt-25 transition transfrom duration-200 `}>
           <div className="flex flex-col items-center justify-center gap-4">
             <h2 className='text-white text-[58px] font-bold'>{sliderData[slider].title}</h2>
-            <Link className='text-white underline text-[18px] font-medium transition duration-200 hover:opacity-90'>{sliderData[slider].Link}</Link>
+            <Link className='text-white underline text-[18px] font-bold transition duration-200 hover:opacity-90'>{sliderData[slider].Link}</Link>
           </div>
           <div className="flex items-center justify-around w-full relative">
             <img onClick=
@@ -69,7 +127,34 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Services serviceData={serviceData} />
+      <Finance financeData={financeData} />
+      <BirBonus />
+      <div className="flex flex-col items-center justify-center w-full my-22.5 ">
+        <div className="flex flex-col items-center justify-center w-[55%] gap-6">
+          <h2 className='text-[48px] text-[#141414] font-bold text-center'>Pul məsələlərini sadələşdiririk</h2>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span onClick={() => setPulMeselesi('payment')} className={`text-[18px] ${pulMeselesi === 'payment' ? " text-white  bg-[#141414]" : "text-[#141414]  bg-[#F5F4F5] border border-[#141414]"} rounded-4xl cursor-pointer p-2 px-4 transition duration-200 hover:opacity-90 font-medium`}>Ödənişlər</span>
+            <span onClick={() => setPulMeselesi('transfers')} className={`text-[18px] ${pulMeselesi === 'transfers' ? " text-white  bg-[#141414]" : "text-[#141414]  bg-[#F5F4F5] border border-[#141414]"} rounded-4xl border border-[#141414] cursor-pointer p-2 px-4  font-medium transition duration-200 hover:opacity-90`}>Köçürmələr</span>
+          </div>
+          <video muted autoPlay loop src={`${pulMeselesi === 'payment' ? `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673df46b3cd60460813cd_bills-show-transcode.mp4` : `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673d6c5ec88584d11eb3d_transfers-show-transcode.mp4`}`}></video>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center w-full my-22.5 ">
+        <div className="flex flex-col items-center justify-center w-[55%] gap-6">
+          <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2ef578fed32f07a27cf_logo-bir.svg" />
+          <h2 className='text-[48px] text-[#141414] font-bold text-center'>Biz Bir ekosisteminin bir hissəsiyik</h2>
+          <div className="flex items-center justify-between mt-2 w-[80%]">
+            {
+              birEcosistem.map((item, id) => (
+                <img src={item.imgUrl} alt='ecosystem-logo-image' className='opacity-50' />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <Faq  homeFaq={homeFaq}/>
+      <Footer />
     </div>
   )
 }

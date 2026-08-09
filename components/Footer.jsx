@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../src/App.css'
+import '../src/index.css'
 const Footer = () => {
   return (
-    <div className='flex flex-col px-15 items-center justify-center w-full rounded-t-4xl bg-[#141414] mt-10'>
+    <div className='flex flex-col  items-center justify-center w-full rounded-t-4xl bg-[#141414] mt-10'>
       <div className="flex flex-col items-center justify-center w-[85%] py-22.5 gap-5">
         <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68d3b2ef48d6490b11ac04b6_m10%20logo.svg" alt="m10 download qr code" />
         <h2 className='text-[#F4F0EE] text-[48px] font-bold'>Tətbiqi yükləmək üçün skan et</h2>
@@ -16,8 +18,8 @@ const Footer = () => {
         </div>
 
       </div>
-      <div className="flex items-center justify-between  w-full px-15 py-6">
-        <div className="flex items-center gap-10 justify-center">
+      <div className="flex items-center justify-between  w-full  py-10 border-t border-t-[#2c2b2b]">
+        <div className="flex items-center pl-15 gap-10 justify-center w-[75%]">
 
           <Link to='https://www.instagram.com/m10.az/' className='flex items-center justify-center transition duration-200 hover:opacity-80'>
             <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e24d22e8ff90ded689f7e_24_icon_instagram.svg" alt="" />
@@ -54,19 +56,16 @@ const Footer = () => {
           <Link className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80'>
             <span className='text-white font-bold'>
               İstifadə Qaydaları
-
             </span>
           </Link>
           <Link className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80'>
             <span className='text-white font-bold'>
               Tariflər
-
             </span>
           </Link>
         </div>
-
-        <Link to='/' className='flex items-center justify-center transition duration-200 hover:opacity-80' reloadDocument>
-          <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e24d376f98d0fe715e4db_48-logo-m10.svg" alt="" />
+        <Link to='/' className='flex items-center justify-center transition duration-200 hover:opacity-80 pr-15' reloadDocument>
+          <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e24d376f98d0fe715e4db_48-logo-m10.svg" alt="m10 footer logo" />
         </Link>
       </div>
     </div>

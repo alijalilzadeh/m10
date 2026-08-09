@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import '../src/App.css'
+import '../src/index.css'
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+ useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+}, []);
   return (
     <>
-      <div className="flex items-center justify-center w-full fixed top-0">
+      <div className={`flex items-center justify-center w-full ${!isScrolled ? "fixed top-0" : "relative"} `}>
         <div className="flex items-center justify-between w-[85%] bg-transparent py-4 z-3 px-2">
           <Link className='transition duration-200 hover:opacity-80'>
             <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dcfd5a6635eec1a74d2c2c_m10-white.svg" alt="m10 logo" />
@@ -18,7 +33,7 @@ const Navbar = () => {
             <span className='text-[16px] text-white font-semibold transition duration-200 group-hover:opacity-80'>Az</span>
             <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dcfd53a67fd07c7146c8b5_16_icon_chevron_down_stroke_white.svg" className='transition duration-200 group-hover:opacity-80 flex object-cover  items-center justify-center' />
           </div>
-          
+
         </div>
       </div>
     </>
