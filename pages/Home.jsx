@@ -9,7 +9,7 @@ import '../src/index.css'
 import Finance from '../components/Finance'
 import BirBonus from '../components/BirBonus'
 import Faq from '../components/Faq'
-const Home = ({homeFaq}) => {
+const Home = ({ homeFaq }) => {
   const [pulMeselesi, setPulMeselesi] = useState('payment')
   const videoRef = useRef(null);
   const playVideo = () => {
@@ -84,47 +84,89 @@ const Home = ({homeFaq}) => {
       imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c75c647b077e5c7de2_4ded7748d1c419d5530602987c546e54_transfers.svg'
     }
   ]
+  // setTimeout(() => {
+  //   if (slider === 2) {
+  //     setSlider(0)
+  //   }
+  //   else if (slider != 2 && slider >= 0) {
+  //     setSlider(slider + 1)
+  //   }
+  // }, (4000))
   return (
-    <div className='w-full min-h-screen overflow-x-hidden'>
-      <Navbar />
-      <div className='flex items-center justify-center w-full h-full flex-col'>
-        <div style={{ backgroundImage: `url(${sliderData[slider].imgUrl1} )` }} className={`flex bg-no-repeat bg-cover bg-center flex-col items-center h-full justify-center w-[95%] rounded-4xl pt-25 transition transfrom duration-200 `}>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h2 className='text-white text-[58px] font-bold'>{sliderData[slider].title}</h2>
-            <Link className='text-white underline text-[18px] font-bold transition duration-200 hover:opacity-90'>{sliderData[slider].Link}</Link>
-          </div>
-          <div className="flex items-center justify-around w-full relative">
-            <img onClick=
-              {
-                () => {
-                  if (slider === 0) {
-                    setSlider(2)
-                  }
-                  else if (slider != 0 && slider <= 2) {
-                    setSlider(slider - 1)
-                  }
-                }
-              } src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg" alt="left arrow" className='cursor-pointer' />
-            <img src={sliderData[slider].imgUrl2} className='bg-center bg-cover w-300' alt="" />
-            <img onClick=
-              {
-                () => {
-                  if (slider === 2) {
-                    setSlider(0)
-                  }
-                  else if (slider != 2 && slider >= 0) {
-                    setSlider(slider + 1)
-                  }
-                }
-              } src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg" alt="right arrow" className='cursor-pointer' />
-          </div>
-          <div className="flex items-center justify-center w-full py-4 gap-2">
-            {
-              sliderData.map((item, id) => (
-                <div key={id} onClick={() => setSlider(id)} className={`flex rounded-full w-2 h-2 cursor-pointer ${slider === id ? "bg-white" : " bg-[#897868]"}`}></div>
-              ))
-            }
-          </div>
+    <div className='w-full flex flex-col items-center justify-center min-h-screen overflow-x-hidden'>
+      <div className="w-[95%] items-center justify-center h-full overflow-hidden flex flex-col">
+        <div
+          style={{
+            transform: `translateX(-${slider * 100}%)`,
+          }}
+          className="flex  h-full transition-transform duration-500 ease-in-out"
+        >
+
+          {sliderData.map((item, id) => (
+            <div
+              key={id}
+              style={{
+                backgroundImage: `url(${item.imgUrl1})`,
+              }}
+              className="shrink-0 flex bg-no-repeat bg-cover bg-center flex-col items-center h-full justify-center w-full rounded-4xl "
+            >
+              <Navbar />
+              <div className="flex flex-col items-center justify-center gap-4 mt-4">
+                <h2 className="text-white text-[58px] font-bold">
+                  {item.title}
+                </h2>
+
+                <Link className="text-white underline text-[18px] font-bold transition duration-200 hover:opacity-90">
+                  {item.Link}
+                </Link>
+              </div>
+
+              <div className="flex items-center justify-around w-full relative">
+                <img
+                  onClick={() => {
+                    if (slider === 0) {
+                      setSlider(2);
+                    } else {
+                      setSlider(slider - 1);
+                    }
+                  }}
+                  src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg"
+                  alt="left arrow"
+                  className="cursor-pointer"
+                />
+
+                <img
+                  src={item.imgUrl2}
+                  className="bg-center bg-cover w-300"
+                  alt=""
+                />
+
+                <img
+                  onClick={() => {
+                    if (slider === 2) {
+                      setSlider(0);
+                    } else {
+                      setSlider(slider + 1);
+                    }
+                  }}
+                  src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg"
+                  alt="right arrow"
+                  className="cursor-pointer"
+                />
+              </div>
+
+              <div className="flex items-center justify-center w-full py-4 gap-2">
+                {sliderData.map((_, id) => (
+                  <div
+                    key={id}
+                    onClick={() => setSlider(id)}
+                    className={`flex rounded-full w-2 h-2 cursor-pointer ${slider === id ? "bg-white" : "bg-[#897868]"
+                      }`}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <Services serviceData={serviceData} />
@@ -153,7 +195,7 @@ const Home = ({homeFaq}) => {
           </div>
         </div>
       </div>
-      <Faq  homeFaq={homeFaq}/>
+      <Faq homeFaq={homeFaq} />
       <Footer />
     </div>
   )

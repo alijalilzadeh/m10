@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import './index.css'
 import Home from '../pages/Home'
+import Transfer from '../pages/Transfer'
 function App() {
   const homeFaq = [
     {
@@ -64,6 +65,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home homeFaq={homeFaq} />} />
+      <Route path="/transfers" element={<Transfer />} />
     </Routes>
   )
 }
