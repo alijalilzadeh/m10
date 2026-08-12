@@ -3,6 +3,7 @@ import './App.css'
 import './index.css'
 import Home from '../pages/Home'
 import Transfer from '../pages/Transfer'
+import Rates from '../pages/Rates'
 function App() {
   const homeFaq = [
     {
@@ -66,6 +67,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home homeFaq={homeFaq} />} />
       <Route path="/transfers" element={<Transfer />} />
+      <Route path="/rates" element={<Rates />} />
     </Routes>
   )
 }

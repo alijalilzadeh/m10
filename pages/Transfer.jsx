@@ -91,7 +91,7 @@ const Transfer = () => {
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
           <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
             <h2 className='text-[58px] text-[#141414] font-bold'>Pulun bir m10-dan o birinə - dərhal!</h2>
-            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer p-4 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
+            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
           <div className="flex items-center justify-center gap-3">
             {
@@ -136,7 +136,7 @@ const Transfer = () => {
               ))
             }
           </div>
-          <Link className='underline text-[#141414] text-[14px] font-[550] transition duration-200 opacity-100 hover:opacity-80'>Tariflər haqqında öyrən</Link>
+          <Link to='/rates' className='underline text-[#141414] text-[14px] font-[550] transition duration-200 opacity-100 hover:opacity-80' reloadDocument>Tariflər haqqında öyrən</Link>
         </div>
         <div className="flex flex-col items-center gap-6 justify-center w-full mb-15">
           {

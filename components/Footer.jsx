@@ -61,7 +61,7 @@ const Footer = () => {
               İstifadə Qaydaları
             </span>
           </Link>
-          <Link className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80'>
+          <Link to='/rates' className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80' reloadDocument>
             <span className='text-white font-bold'>
               Tariflər
             </span>

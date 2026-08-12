@@ -20,14 +20,14 @@ const Navbar = ({textColor , DropdownUrl, m10Logo}) => {
   }, []);
   return (
     <>
-      <div onMouseDown={() => setDropDown('')} className={`flex items-center justify-center z-10 w-[85%] `}>
+      <div onMouseDown={() => setDropDown('')} className={`flex items-center justify-center z-10 w-[86%] `}>
         <div className="flex items-center justify-between w-full bg-transparent py-4  px-2">
           <Link to='/' className='transition duration-200 hover:opacity-80' reloadDocument>
             <img src={m10Logo} alt="m10 logo" className='w-12'/>
           </Link>
-          <div className="flex items-center justify-center gap-6 relative">
+          <div className="flex items-center justify-center gap-8 relative">
             <div onMouseEnter={() => setDropDown('finance')} className="flex flex-col gap-2 items-center justify-between relative w-full">
-              <NavLink onMouseEnter={() => setDropDown('finance')} className={`text-[16px] ${textColor} opacity-95 font-bold group transition duration-200 hover:opacity-80`}>Maliyyə</NavLink>
+              <NavLink onMouseEnter={() => setDropDown('finance')} className={`text-[16px] ${textColor} opacity-95 font-semibold group transition duration-200 hover:opacity-80`}>Maliyyə</NavLink>
               <div onMouseEnter={() => setDropDown('finance')} onMouseLeave={() => setDropDown('')} className={` flex-col items-start justify-center gap-1 z-13 rounded-3xl p-5 bg-white absolute top-full left-0 w-full  transition-all duration-400 min-w-57 ${dropDown === 'finance' ? "flex opacity-100 translate-y-4 " : "opacity-0 "}  `}>
                 <NavLink to='/transfers' className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'} reloadDocument >Pul köçürmələri</NavLink>
                 <NavLink className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'}  >Beynalxalq köçürmələr</NavLink>
@@ -36,14 +36,14 @@ const Navbar = ({textColor , DropdownUrl, m10Logo}) => {
             </div>
 
             <div onMouseEnter={() => setDropDown('services')} className="flex flex-col gap-2 items-center justify-between relative w-full ">
-              <NavLink onMouseEnter={() => setDropDown('services')} className={`text-[16px] opacity-90 ${textColor} font-bold group transition duration-200 hover:opacity-80`}>Xidmətlər</NavLink>
+              <NavLink onMouseEnter={() => setDropDown('services')} className={`text-[16px] opacity-90 ${textColor} font-semibold group transition duration-200 hover:opacity-80`}>Xidmətlər</NavLink>
               <div onMouseEnter={() => setDropDown('services')} onMouseLeave={() => setDropDown('')} className={` flex-col items-start justify-center gap-1 z-13 rounded-3xl p-5 bg-white absolute top-full left-0 w-full transition-all duration-200 min-w-57  ${dropDown === 'services' ? "flex opacity-100 translate-y-4 " : " opacity-0"}  `}>
                 <NavLink className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'}  >BakıKart telefonda</NavLink>
                 <NavLink className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'}  >QR ilə ödə</NavLink>
                 <NavLink className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'}  >Ödənişlər</NavLink>
               </div>
             </div>
-            <NavLink onMouseEnter={()=> setDropDown('')} className={`text-[16px] ${textColor} font-bold opacity-95 transition duration-200 hover:opacity-80`}>Təhlükəsizlik</NavLink>
+            <NavLink onMouseEnter={()=> setDropDown('')} className={`text-[16px] ${textColor} font-semibold opacity-95 transition duration-200 hover:opacity-80`}>Təhlükəsizlik</NavLink>
           </div>
           <div className="flex flex-col items-center justify-center z-13 relative">
             <div className="group flex items-center justify-center gap-2 cursor-pointer">

@@ -3,6 +3,32 @@ body{
   background-color: #F4F0EE;
   margin-top:4px;
 }
+@font-face {
+  font-family: "TT Fellows";
+  src: url("../src/fonts/TT_Fellows_Trial_Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Fellows";
+  src: url("../src/fonts/TT_Fellows_Trial_Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TT Fellows";
+  src: url("../src/fonts/TT_Fellows_Trial_DemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "TT Fellows";
+  src: url("../src/fonts/TT_Fellows_Trial_Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+
+
 *{
-font-family: "Nunito Sans", sans-serif;
+  font-family: "TT Fellows", sans-serif;
 }

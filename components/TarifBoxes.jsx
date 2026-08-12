@@ -26,7 +26,7 @@ const TarifBoxes = () => {
             <div key={id} className="flex flex-col items-center gap-4 justify-start w-[28%] bg-white rounded-4xl px-4 py-8 min-h-70">
               <img src={item.url} />
               <div className="flex flex-col items-center justify-center gap-2">
-                <h2 className='text-[#141414] text-[20px] font-bold text-center leading-6'>{item.title}</h2>
+                <h2 className='text-[#141414] text-[20px] font-semibold text-center leading-6'>{item.title}</h2>
                 <p className='selection:bg-[#99B3E8] text-[14px] text-[#979797] text-center font-normal'>{item.desc}</p>
               </div>
             </div>
@@ -34,7 +34,7 @@ const TarifBoxes = () => {
         }
       </div>
 
-      <Link className='underline text-[#141414] text-[14px] font-[550] transition duration-200 opacity-100 hover:opacity-80'>Tariflər haqqında öyrən</Link>
+      <Link to='/rates' className='underline text-[#141414] text-[14px] font-medium transition duration-200 opacity-100 hover:opacity-80' reloadDocument>Tariflər haqqında öyrən</Link>
     </div>
   )
 }
