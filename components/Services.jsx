@@ -2,11 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../src/App.css'
 import '../src/index.css'
-const Services = ({ serviceData }) => {
+const Services = ({serviceTitle}) => {
+  const serviceData = [
+    {
+      title: 'Xidmətləri ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c769ab6065f3b8fb3d_12f30e9e51e0f24d0bd12f589967b108_bill.svg'
+    },
+    {
+      title: 'Gedişaqqını ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c702678016c30dca2b_8d079c05f22299a6a8e2be7f620abd3b_bakikart.svg'
+    },
+    {
+      title: 'QR ilə ödə',
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7050df87b1dffb148_8cda47652306a58ba0d81875dd10c89e_qr%20pay.svg'
+    }
+  ]
   return (
     <div className='flex items-center justify-center w-full my-16'>
       <div className="flex flex-col items-center justify-center w-[55%] gap-10">
-        <h2 className='text-[48px] text-[rgb(20, 20, 20)] font-bold text-center'>Xidmətlər</h2>
+        <h2 className='text-[48px] text-[rgb(20, 20, 20)] font-bold text-center leading-15'>{serviceTitle}</h2>
         <div className="flex gap-6 w-full">
 
           {

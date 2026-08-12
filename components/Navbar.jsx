@@ -20,9 +20,9 @@ const Navbar = ({textColor , DropdownUrl, m10Logo}) => {
   }, []);
   return (
     <>
-      <div onMouseDown={() => setDropDown('')} className={`flex items-center justify-center z-10 w-[90%] `}>
+      <div onMouseDown={() => setDropDown('')} className={`flex items-center justify-center z-10 w-[85%] `}>
         <div className="flex items-center justify-between w-full bg-transparent py-4  px-2">
-          <Link className='transition duration-200 hover:opacity-80'>
+          <Link to='/' className='transition duration-200 hover:opacity-80' reloadDocument>
             <img src={m10Logo} alt="m10 logo" className='w-12'/>
           </Link>
           <div className="flex items-center justify-center gap-6 relative">
@@ -43,7 +43,7 @@ const Navbar = ({textColor , DropdownUrl, m10Logo}) => {
                 <NavLink className={'text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'}  >Ödənişlər</NavLink>
               </div>
             </div>
-            <NavLink className={`text-[16px] ${textColor} font-bold opacity-95 transition duration-200 hover:opacity-80`}>Təhlükəsizlik</NavLink>
+            <NavLink onMouseEnter={()=> setDropDown('')} className={`text-[16px] ${textColor} font-bold opacity-95 transition duration-200 hover:opacity-80`}>Təhlükəsizlik</NavLink>
           </div>
           <div className="flex flex-col items-center justify-center z-13 relative">
             <div className="group flex items-center justify-center gap-2 cursor-pointer">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Faq = ({ homeFaq }) => {
+const Faq = ({ faq }) => {
   const [faqStatus, setFaqStatus] = useState(false)
   const [faqId, setFaqId] = useState([]);
   
@@ -10,7 +10,7 @@ const Faq = ({ homeFaq }) => {
         <h2 className='text-[48px] text-[#141414] font-bold text-center mb-10'>Tez-tez verilən suallar</h2>
 
         <div className="flex flex-col gap-4">
-          {homeFaq.map((item, id) => {
+          {faq.map((item, id) => {
             const isOpen = faqId.includes(id);
 
             return (
@@ -43,9 +43,9 @@ const Faq = ({ homeFaq }) => {
                 </div>
 
                 <div
-                  className={`items-center justify-center w-full transition-all duration-300 overflow-hidden ${isOpen
-                      ? "max-h-50 opacity-100 pt-3"
-                      : "max-h-0 opacity-0 pt-0"
+                  className={`items-center justify-center w-full transition-all duration-500 ease-in-out overflow-hidden ${isOpen
+                      ? "max-h-50  pt-3"
+                      : "max-h-0  pt-0"
                     }`}
                 >
                   <p>{item.a}</p>

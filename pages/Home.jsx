@@ -10,6 +10,7 @@ import Finance from '../components/Finance'
 import BirBonus from '../components/BirBonus'
 import Faq from '../components/Faq'
 const Home = ({ homeFaq }) => {
+  const serviceTitle = 'Xidmətlər'
   const textColor = 'text-white'
   const DropdownUrl = 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dcfd53a67fd07c7146c8b5_16_icon_chevron_down_stroke_white.svg'
   const m10Logo = 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dcfd5a6635eec1a74d2c2c_m10-white.svg'
@@ -59,20 +60,6 @@ const Home = ({ homeFaq }) => {
     }
   ]
 
-  const serviceData = [
-    {
-      title: 'Xidmətləri ödə',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c769ab6065f3b8fb3d_12f30e9e51e0f24d0bd12f589967b108_bill.svg'
-    },
-    {
-      title: 'Gedişaqqını ödə',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c702678016c30dca2b_8d079c05f22299a6a8e2be7f620abd3b_bakikart.svg'
-    },
-    {
-      title: 'QR ilə ödə',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7050df87b1dffb148_8cda47652306a58ba0d81875dd10c89e_qr%20pay.svg'
-    }
-  ]
   const financeData = [
     {
       title: 'Xaricə pul köçürmələri',
@@ -137,7 +124,7 @@ const Home = ({ homeFaq }) => {
           ))}
         </div>
       </div>
-      <Services serviceData={serviceData} />
+      <Services serviceTitle={serviceTitle}/>
       <Finance financeData={financeData} />
       <BirBonus />
       <div className="flex flex-col items-center justify-center w-full my-22.5 ">
@@ -163,7 +150,7 @@ const Home = ({ homeFaq }) => {
           </div>
         </div>
       </div>
-      <Faq homeFaq={homeFaq} />
+      <Faq faq={homeFaq} />
       <Footer />
     </div>
   )
