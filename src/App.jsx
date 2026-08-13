@@ -4,6 +4,9 @@ import './index.css'
 import Home from '../pages/Home'
 import Transfer from '../pages/Transfer'
 import Rates from '../pages/Rates'
+import Credit from '../pages/Credit'
+import Bills from '../pages/Bills'
+import QrPay from '../pages/QrPay'
 function App() {
   const homeFaq = [
     {
@@ -68,6 +71,9 @@ function App() {
       <Route path="/" element={<Home homeFaq={homeFaq} />} />
       <Route path="/transfers" element={<Transfer />} />
       <Route path="/rates" element={<Rates />} />
+      <Route path="/credit" element={<Credit />} />
+      <Route path="/bills" element={<Bills />} />
+      <Route path="/qr-pay" element={<QrPay />} />
     </Routes>
   )
 }

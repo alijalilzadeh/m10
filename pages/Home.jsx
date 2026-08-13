@@ -86,7 +86,7 @@ const Home = ({ homeFaq }) => {
                   {item.title}
                 </h2>
 
-                <Link className="text-white underline text-[18px] font-bold transition duration-200 hover:opacity-90">
+                <Link className="text-white underline text-[18px] font-medium transition duration-200 hover:opacity-80">
                   {item.Link}
                 </Link>
               </div>

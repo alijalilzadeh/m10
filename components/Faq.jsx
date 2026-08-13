@@ -6,7 +6,7 @@ const Faq = ({ faq }) => {
   
   return (
     <div className='flex items-center justify-center w-full my-22.5'>
-      <div className="flex flex-col items-center justify-center w-[65%]">
+      <div className="flex flex-col items-center justify-center w-[55%]">
         <h2 className='text-[48px] text-[#141414] font-bold text-center mb-10'>Tez-tez verilən suallar</h2>
 
         <div className="flex flex-col gap-4">
@@ -43,7 +43,7 @@ const Faq = ({ faq }) => {
                 </div>
 
                 <div
-                  className={`items-center justify-center w-full transition-all duration-500 ease-in-out overflow-hidden ${isOpen
+                  className={`items-center justify-center w-full transition-all duration-1000 ease-in-out overflow-hidden ${isOpen
                       ? "max-h-50  pt-3"
                       : "max-h-0  pt-0"
                     }`}
