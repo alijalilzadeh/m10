@@ -120,7 +120,7 @@ const QrPay = () => {
                 <div key={id} className="flex flex-col items-start w-100 justify-start relative ">
                   <span className='absolute top-4 left-4 items-center flex justify-center w-8 h-8 rounded-full text-[#141414] font-medium bg-[#FFFFFF] border border-[#141414]'>{id + 1}</span>
                   <div className="flex items-center justify-center  bg-[#EBE8E7] rounded-4xl mb-6">
-                    <img src={item.url} className='flex object--cover w-full' />
+                    <img src={item.url} className='flex object-cover w-full' />
                   </div>
                   <h2 className='text-[#141414] text-[18px] font-medium'>{item.title}</h2>
                 </div>
