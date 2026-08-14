@@ -9,6 +9,7 @@ import Bills from '../pages/Bills'
 import QrPay from '../pages/QrPay'
 import BakiKart from '../pages/BakiKart'
 import Security from '../pages/Security'
+import InternationalTransfers from '../pages/InternationalTransfers'
 function App() {
   const homeFaq = [
     {
@@ -78,6 +79,7 @@ function App() {
       <Route path="/qr-pay" element={<QrPay />} />
       <Route path="/bakikart" element={<BakiKart />} />
       <Route path="/security" element={<Security />} />
+      <Route path="/international-transfers" element={<InternationalTransfers />} />
     </Routes>
   )
 }

@@ -25,7 +25,7 @@ const Navbar = ({ textColor, DropdownUrl, m10Logo }) => {
                     Pul köçürmələri
                   </NavLink>
 
-                  <NavLink  onClick={() => setDropDown('')} className='text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]'>
+                  <NavLink to='/international-transfers'  onClick={() => setDropDown('')} className='text-[14px] text-[#5e5e5e] font-medium transition duration-200 hover:text-[#141414]' reloadDocument>
                     Beynalxalq köçürmələr
                   </NavLink>
 

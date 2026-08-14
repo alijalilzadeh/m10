@@ -62,7 +62,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @keyframes infiniteTranslate {
-   from {
+   0% {
     transform: translate3d(0%, 0px, 0px)
       scale3d(1, 1, 1)
       rotateX(0deg)
@@ -70,9 +70,16 @@ input[type="range"]::-moz-range-thumb {
       rotateZ(0deg)
       skew(0deg, 0deg);
   }
-
-  to {
+  50% {
     transform: translate3d(-50%, 0px, 0px)
+      scale3d(1, 1, 1)
+      rotateX(0deg)
+      rotateY(0deg)
+      rotateZ(0deg)
+      skew(0deg, 0deg);
+  }
+  100% {
+    transform: translate3d(-100%, 0px, 0px)
       scale3d(1, 1, 1)
       rotateX(0deg)
       rotateY(0deg)
@@ -82,6 +89,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .moving-box {
-  animation: infiniteTranslate 15s linear infinite;
+  animation: infiniteTranslate 14s linear infinite;
   will-change: transform;
+  transform-style: preserve-3d;
 }

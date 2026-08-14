@@ -47,8 +47,13 @@ const QrPayLogoTransition = () => {
         <img src='https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dbc000b0aca3a0fcba46eb_1dd4c899f7643c4b9dee4a2a533f4c03_bir%202%20bage.svg' />
         <h2 className='text-[48px] text-[#141414] font-bold '>m10-la ödəmək zövq verir</h2>
       </div>
-      <div className="flex items-center justify-center overflow-hidden w-[90%]">
+      <div className="flex items-center justify-center overflow-hidden w-[95%]">
         <div className="flex items-center justify-center gap-2 w-full moving-box">
+          {
+            transitionData.map((item, id) => (
+              <img src={item.url} />
+            ))
+          }
           {
             transitionData.map((item, id) => (
               <img src={item.url} />
