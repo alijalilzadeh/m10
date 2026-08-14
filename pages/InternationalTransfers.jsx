@@ -81,7 +81,7 @@ const InternationalTransfers = () => {
   return (
     <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden'>
       <Helmet>
-        <title>Mağazalarda m10-la ödəniş edənlərə 2% bonus</title>
+        <title>Xaricə komissiyasız pul köçür</title>
         <meta name="description" content="transfers" />
       </Helmet>
       <div className='flex flex-col items-center  justify-center w-full h-full '>

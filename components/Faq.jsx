@@ -27,7 +27,7 @@ const Faq = ({ faq }) => {
                   }`}
               >
                 <div className="flex items-center justify-between w-full">
-                  <p className="text-[#141414] font-semibold text-[18px]">
+                  <p className="text-[#141414] font-bold text-[18px]">
                     {item.q}
                   </p>
 
