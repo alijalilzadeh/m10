@@ -11,6 +11,8 @@ import BakiKart from '../pages/BakiKart'
 import Security from '../pages/Security'
 import InternationalTransfers from '../pages/InternationalTransfers'
 import RusiyayaPulGondermek from '../pages/RusiyayaPulGondermek'
+import TurkiyeyePulGondermek from '../pages/TurkiyeyePulGondermek'
+import NoMatch from '../components/NoMatch'
 function App() {
   const homeFaq = [
     {
@@ -82,6 +84,8 @@ function App() {
       <Route path="/security" element={<Security />} />
       <Route path="/international-transfers" element={<InternationalTransfers />} />
       <Route path="/rusiyaya-pul-gondermek" element={<RusiyayaPulGondermek />} />
+      <Route path="/turkiyeye-pul-gondermek" element={<TurkiyeyePulGondermek />} />
+      <Route path="*" element={<NoMatch />} />
     </Routes>
   )
 }

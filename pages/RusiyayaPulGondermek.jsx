@@ -124,7 +124,7 @@ const RusiyayaPulGondermek = () => {
           <div className="flex items-center justify-center w-full gap-6">
             {
               whereToTransfer.map((item, id) => (
-                <Link className="flex items-center justify-between w-1/3 px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90">
+                <Link to={item.link} className="flex items-center justify-between w-1/3 px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90" reloadDocument>
                   <div className="flex items-center justify-center gap-3">
                     <img src={item.url} />
                     <h2 className='text-[#141414] text-[18px] font-medium '>{item.title}</h2>

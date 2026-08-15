@@ -63,15 +63,18 @@ const Home = ({ homeFaq }) => {
   const financeData = [
     {
       title: 'Xaricə pul köçürmələri',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7e0cfa1a27d51240c_23642c365fd66de4bbb825068de1eece_international.svg'
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7e0cfa1a27d51240c_23642c365fd66de4bbb825068de1eece_international.svg',
+      link : '/international-transfers'
     },
     {
       title: '25 000 ₼-dək kredit',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c76c9a8584549173ed_37a597f2f2d863ebbf63450a673b5b13_loan.svg'
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c76c9a8584549173ed_37a597f2f2d863ebbf63450a673b5b13_loan.svg',
+      link : '/credit'
     },
     {
       title: 'Pul köçürmələri',
-      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c75c647b077e5c7de2_4ded7748d1c419d5530602987c546e54_transfers.svg'
+      imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c75c647b077e5c7de2_4ded7748d1c419d5530602987c546e54_transfers.svg',
+      link : '/transfers'
     }
   ]
   return (
