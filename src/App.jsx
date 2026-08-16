@@ -13,6 +13,7 @@ import InternationalTransfers from '../pages/InternationalTransfers'
 import RusiyayaPulGondermek from '../pages/RusiyayaPulGondermek'
 import TurkiyeyePulGondermek from '../pages/TurkiyeyePulGondermek'
 import NoMatch from '../components/NoMatch'
+import MicroCredit from '../pages/MicroCredit'
 function App() {
   const homeFaq = [
     {
@@ -85,6 +86,7 @@ function App() {
       <Route path="/international-transfers" element={<InternationalTransfers />} />
       <Route path="/rusiyaya-pul-gondermek" element={<RusiyayaPulGondermek />} />
       <Route path="/turkiyeye-pul-gondermek" element={<TurkiyeyePulGondermek />} />
+      <Route path="/microcredit" element={<MicroCredit />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   )

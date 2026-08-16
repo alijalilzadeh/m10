@@ -43,20 +43,20 @@ const Home = ({ homeFaq }) => {
       imgUrl1: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/691f2063df07f22431bdd7fb_da43949350786b5287fdfa8a54fb2029_hero-section-crossboarder.png',
       imgUrl2: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6920058df8a3a5056385632a_hero-section-crossborder.svg',
       title: 'Beynəlxalq köçürmələr',
-      Link: 'Ətraflı'
+      Link: '/international-transfers'
     },
 
     {
       imgUrl1: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/691f21d9f199ce17cfb55cc9_bb4f0b09d48688314526bbfc677a36be_hero-section-bakikart.png',
       imgUrl2: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6920058e0c5490628180fb0e_hero-section-baki.svg',
       title: 'Nəqliyyatı m10-la ödə',
-      Link: 'Ətraflı'
+      Link: '/bakikart'
     },
     {
       imgUrl1: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/691f21d98e7b418cf013dd87_e494cb687ab7a79b44f552f7dbb45a6b_ChatGPT%20Image%20Nov%207%2C%202025%2C%2011_57_38%20AM%201.png',
       imgUrl2: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6920058eecb32d66a2495ce2_hero-section-credit.svg',
       title: '25 000 ₼-dək kredit əldə et!',
-      Link: 'Ətraflı'
+      Link: '/credit'
     }
   ]
 
@@ -89,8 +89,8 @@ const Home = ({ homeFaq }) => {
                   {item.title}
                 </h2>
 
-                <Link className="text-white underline text-[18px] font-medium transition duration-200 hover:opacity-80">
-                  {item.Link}
+                <Link to={item.Link} className="text-white underline text-[18px] font-medium transition duration-200 hover:opacity-80" reloadDocument>
+                  Ətraflı
                 </Link>
               </div>
 
