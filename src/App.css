@@ -7,6 +7,12 @@ body {
 
 @font-face {
   font-family: "TT Fellows";
+  src: url("../src/fonts/TT_Fellows_Trial_Light.woff2") format("woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "TT Fellows";
   src: url("../src/fonts/TT_Fellows_Trial_Regular.woff2") format("woff2");
   font-weight: 400;
 }

@@ -45,8 +45,6 @@ const FooterSecurity = () => {
             <Link className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80'>
               <span className='text-white font-bold'>Məxfilik Siyasəti</span>
             </Link>
-
-
             <Link className='flex items-center justify-center gap-1 transition duration-200 hover:opacity-80'>
               <span className='text-white font-bold'>
                 İstifadə Qaydaları
