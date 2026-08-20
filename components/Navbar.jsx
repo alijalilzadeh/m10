@@ -13,7 +13,6 @@ const Navbar = ({ textColor, DropdownUrl, m10Logo }) => {
             <img src={m10Logo} alt="m10 logo" className='w-12' />
           </Link>
           <div className="flex items-center justify-center gap-8 relative">
-
             <div onMouseEnter={() => setDropDown('finance')} onMouseLeave={() => setDropDown('')} className="relative flex flex-col items-center justify-between w-full">
               <NavLink className={`text-[16px] ${textColor} opacity-95 font-semibold transition duration-200 hover:opacity-80`}>
                 Maliyyə
@@ -63,14 +62,14 @@ const Navbar = ({ textColor, DropdownUrl, m10Logo }) => {
             </NavLink>
 
           </div>
-          <div className="flex flex-col items-center justify-center z-13 relative">
-            <div className="group flex items-center justify-center gap-2 cursor-pointer">
+          <div onMouseEnter={() => setDropDown('lang')} onMouseLeave={() => setDropDown('')} className="flex flex-col items-center justify-center z-13 relative">
+            <div onMouseEnter={() => setDropDown('lang')} onMouseLeave={() => setDropDown('')} className="group flex items-center justify-center gap-2 cursor-pointer">
               <span className={`text-[16px] ${textColor}  font-semibold transition duration-200 group-hover:opacity-80 group`}>Az</span>
               <img src={DropdownUrl} className='transition duration-200 group-hover:opacity-80 flex object-cover  items-center justify-center' />
             </div>
-            <div className="flex opacity-0  flex-col absolute top-full left-0 items-center justify-center w-full rounded-3xl transition-all duration-300 bg-white p-5 group-hover:opacity-100 group-hover:-translate-y-4">
-              <span>En</span>
-              <span>Ru</span>
+            <div className={`flex flex-col absolute top-full bg-white left-0 w-full min-w-20 rounded-3xl px-4 py-6 mt-2 shadow-lg z-20 transition-all duration-300 ${dropDown === 'lang' ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2  invisible"}`}>
+              <span className='cursor-pointer text-[16px] text-[#141414] font-semibold opacity-100 transition-all duration-200 hover:opacity-70'>En</span>
+              <span className='cursor-pointer text-[16px] text-[#141414] font-semibold opacity-100 transition-all duration-200 hover:opacity-70'>Ru</span>
             </div>
           </div>
         </div>

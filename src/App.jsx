@@ -14,6 +14,7 @@ import RusiyayaPulGondermek from '../pages/RusiyayaPulGondermek'
 import TurkiyeyePulGondermek from '../pages/TurkiyeyePulGondermek'
 import NoMatch from '../components/NoMatch'
 import MicroCredit from '../pages/MicroCredit'
+import Business from '../pages/Business'
 function App() {
   const homeFaq = [
     {
@@ -87,6 +88,7 @@ function App() {
       <Route path="/rusiyaya-pul-gondermek" element={<RusiyayaPulGondermek />} />
       <Route path="/turkiyeye-pul-gondermek" element={<TurkiyeyePulGondermek />} />
       <Route path="/microcredit" element={<MicroCredit />} />
+      <Route path="/business" element={<Business />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   )
