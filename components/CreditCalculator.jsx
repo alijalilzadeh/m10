@@ -20,7 +20,7 @@ const CreditCalculator = () => {
   setMonthlyPayment(Math.round(payment));
 }, [value, period]);
   return (
-    <div className='flex flex-col items-center justify-center w-full'>
+    <div id='calculate' className='flex flex-col items-center justify-center w-full'>
       <div className="flex flex-col items-center justify-center w-[55%]">
         <h2 className='text-[#141414] text-[48px] font-bold text-center mb-14'>Aylıq ödənişini hesabla</h2>
         <div className="flex items-start justify-start w-full rounded-[20px] bg-white">

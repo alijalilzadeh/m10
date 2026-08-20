@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Faq from '../components/Faq'
+import DownloadQrBox from '../components/DownloadQrBox'
 const BakiKart = () => {
   const imgUrls = [
     { url: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68d43620b4c51de5c556c371_8fc3f2de0b23b7aa8a6298d79033b6b5_arche%20l.svg' },
@@ -74,28 +75,29 @@ const BakiKart = () => {
   ]
   const bakiKartFaq = [
     {
-      q:'QR bileti necə almaq olar?',
+      q: 'QR bileti necə almaq olar?',
       a: 'm10 tətbiqinə daxil ol, “BakıKart” bölməsini seç və “Bilet al” düyməsinə bas. Gedişhaqqını marşrutun tarifinə uyğun seç. Alış prosesi cəmi bir neçə saniyə çəkir.'
     },
     {
-      q:'QR bileti necə istifadə etmək olar?',
+      q: 'QR bileti necə istifadə etmək olar?',
       a: 'Əsas səhifədəki BakıKart bölməsinə keç, bilet al və QR kodu aktiv et. Daha sonra nəqliyyatda QR kodu skan edərək ödənişi tamamla. Hər QR biletdən yalnız bir gediş üçün istifadə oluna bilər.'
     },
     {
-      q:'Əgər bilet istifadə olunmasa nə etməli?',
+      q: 'Əgər bilet istifadə olunmasa nə etməli?',
       a: 'Əgər bilet istifadə olunmasa, məbləğ 1 gün ərzində balansına geri qaytarılır.'
     },
     {
-      q:'Gediş haqqı nə qədərdir?',
+      q: 'Gediş haqqı nə qədərdir?',
       a: 'm10-la gediş haqqı tarifi istiqamətdən asılı olaraq 0.50 - 1.30 AZN aralığında müəyyən edilib.'
     },
     {
-      q:'Bilet nə qədər müddət keçərlidir?',
+      q: 'Bilet nə qədər müddət keçərlidir?',
       a: 'Bilet 5 dəqiqə ərzində keçərli olacaq.'
     }
   ]
 
   const [category, setCategory] = useState('QR ilə ödəniş')
+  const [download, setDownload] = useState(false)
   const textColor = 'text-[#141414]'
   const serviceTitle = 'Lazım olan bütün xidmətlər – bir tətbiqdə'
   const DropdownUrl = 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e33df3874b267affd6acb_16_icon_chevron_down_stroke.svg'
@@ -103,18 +105,24 @@ const BakiKart = () => {
   const filteredHowTo = howTo.find(item => item.sort === category);
 
   return (
-    <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden'>
+    <div  className={`w-full flex flex-col items-start justify-center min-h-screen relative overflow-x-hidden `}>
       <Helmet>
         <title>Mağazalarda m10-la ödəniş edənlərə 2% bonus</title>
         <meta name="description" content="transfers" />
       </Helmet>
+      {
+        download && (
+          <DownloadQrBox download={download} setDownload={setDownload} />
+        )
+      }
+      <div className={`flex items-center justify-center absolute inset-0 z-39 ${download ? "bg-black/50 flex" : "hidden"}`}></div>
       <div className='flex flex-col items-center  justify-center w-full h-full '>
         <div className=" flex flex-col items-center h-full justify-center w-full rounded-4xl bg-white relative">
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
           <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
             <h2 className='text-[58px] text-[#141414] font-bold w-full text-center leading-18'>Nəqliyyatı m10-la ödə</h2>
             <p className='text-[18px] font-medium text-[#141414]'>QR ilə ödə və ya BakıKart balansını birbaşa telefondan artır</p>
-            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
+            <span onClick={() => setDownload(true)} className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
           <div className="flex items-center justify-center gap-6  pb-10">
             {

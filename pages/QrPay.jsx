@@ -1,11 +1,13 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Services from '../components/Services'
 import TarifBoxes from '../components/TarifBoxes'
 import QrPayLogoTransition from '../components/QrPayLogoTransition'
 import Faq from '../components/Faq'
+import DownloadQrBox from '../components/DownloadQrBox'
 const QrPay = () => {
   const textColor = 'text-[#141414]'
   const serviceTitle = 'Lazım olan bütün xidmətlər – bir tətbiqdə'
@@ -76,18 +78,26 @@ const QrPay = () => {
       a: 'Pulqabılar arasında edilən köçürmələrə komissiya tətbiq olunmur. Pulqabından karta köçürmələrdə müəyyən limit və kiçik komissiya tətbiq olunur. 5000 ₼-dan çox köçürmələrdə məbləğin 0.5%-nə komissiya tətbiq olunacaq. 20000 ₼-dan çox köçürmələrdə məbləğin 0.3%-nə komissiya tətbiq olunacaq.'
     }
   ]
+    const [download, setDownload] = useState(false)
+  
   return (
-    <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden'>
+    <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden relative'>
       <Helmet>
         <title>Mağazalarda m10-la ödəniş edənlərə 2% bonus</title>
         <meta name="description" content="transfers" />
       </Helmet>
+      {
+        download && (
+          <DownloadQrBox download={download} setDownload={setDownload} />
+        )
+      }
+      <div className={`flex items-center justify-center absolute inset-0 z-39 ${download ? "bg-black/50 flex" : "hidden"}`}></div>
       <div className='flex flex-col items-center  justify-center w-full h-full '>
         <div className=" flex flex-col items-center h-full justify-center w-full rounded-4xl bg-white relative">
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
           <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
             <h2 className='text-[58px] text-[#141414] font-bold w-[90%] text-center leading-18'>Mağazalarda m10-la ödəniş edənlərə bonuslar</h2>
-            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
+            <span onClick={() => setDownload(true)} className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
           <div className="flex items-center justify-center  pb-10">
             {

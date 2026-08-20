@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CreditCalculator from '../components/CreditCalculator'
@@ -88,7 +89,7 @@ const Credit = () => {
           <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
             <h2 className='text-[58px] text-[#141414] font-bold'>25 000 ₼-dək kredit əldə et!</h2>
             <p className='text-[18px] font-medium text-[#141414]'>Cəmi 2 dəqiqəyə və tamamilə onlayn şəkildə</p>
-            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Müraciət et</span>
+            <a href='#calculate' className={`text-[18px]  text-white scroll-smooth bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Müraciət et</a>
           </div>
           <div className="flex items-center justify-center  pb-10">
             {

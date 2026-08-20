@@ -1,9 +1,11 @@
 import React from 'react'
+import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Services from '../components/Services'
 import Faq from '../components/Faq'
+import DownloadQrBox from '../components/DownloadQrBox'
 const Bills = () => {
   const textColor = 'text-[#141414]'
   const serviceTitle = 'Lazım olan bütün xidmətlər – bir tətbiqdə'
@@ -70,47 +72,54 @@ const Bills = () => {
   ]
   const creditFaq = [
     {
-      q:'m10 tətbiqində necə qeydiyyatdan keçim?',
+      q: 'm10 tətbiqində necə qeydiyyatdan keçim?',
       a: 'Çox sadə. Heç 2 dəqiqə vaxtını almayacaq.• “AppStore” və ya “Google Play Market”də m10 tətbiqini tap və smartfonuna quraşdır.• Telefon nömrənlə qısa zamanda qeydiyyatdan keç.Vəssalam. m10 tətbiqini istifadə etməyə hazırsan'
     },
     {
-      q:'m10 ilə harada ödəyə bilərəm?',
+      q: 'm10 ilə harada ödəyə bilərəm?',
       a: 'm10 ilə 20 000-dən çox satış nöqtəsində ödəniş edə bilərsən. Tərəfdaşların tam siyahısına tətbiqdən bax. QR kodla ödə və xərclədiyin məbləğin bir hissəsini bonuslar şəklində geri al.'
     },
     {
-      q:'m10-da necə qazana bilərəm?',
+      q: 'm10-da necə qazana bilərəm?',
       a: 'm10 ilə ödəniş etdikcə bonuslar qazanırsan. Kommunal xidmətlər, internet, mobil rabitə və mağazalarda QR ilə ödəniş zamanı xərclədiyin məbləğin bir hissəsi bonuslar şəklində geri qaytarılır.'
     },
     {
-      q:'Ödəniş şablonları necə yarada bilərəm?',
+      q: 'Ödəniş şablonları necə yarada bilərəm?',
       a: 'Biz bunu sənin əvəzinə artıq etdik. İndi tez-tez etdiyin ödənişlər avtomatik olaraq "Ödənişlərim" hissəsinə əlavə olunur. Onların adını rahat dəyişdirə və silə bilərsən.'
     },
     {
-      q:'Doğrudur ki, m10-dan pullar oğurlanır?',
+      q: 'Doğrudur ki, m10-dan pullar oğurlanır?',
       a: 'Sən m10-a tam etibar edə bilərsən. Biz sənin m10-da pullarının təhlükəsizliyini təmin etmək üçün 24/7 çalışırıq və ən müasir müdafiə sistemlərini tətbiq edirik. Lakin bəzi m10 istifadəçiləri dələduzlarla qarşılaşır. Lütfən diqqətli ol və • bank kartının nömrəsini • bank kartının CVV şifrəsini • OTP kodunu (SMS ilə göndərilən kod) heç kimə VERMƏ, GÖNDƏRMƏ, GÖSTƏRMƏ və heç kimlə PAYLAŞMA!!!Bu sadə prinsipə riayət etməklə, pullarının potensial risklərdən qorumuş olacaqsan.'
     },
     {
-      q:'m10-da nömrəmi necə dəyişim?',
+      q: 'm10-da nömrəmi necə dəyişim?',
       a: 'Təəssüf ki, hazırda nömrəni dəyişə bilmirik. Amma sən başqa nömrə ilə qeydiyyatdan keçə və bir neçə m10 hesabından istifadə edə bilərsən.'
     },
     {
-      q:'m10-da köçürmələrə komissiya tətbiq edilir?',
+      q: 'm10-da köçürmələrə komissiya tətbiq edilir?',
       a: 'Pulqabılar arasında edilən köçürmələrə komissiya tətbiq olunmur. Pulqabından karta köçürmələrdə müəyyən limit və kiçik komissiya tətbiq olunur. 5000 ₼-dan çox köçürmələrdə məbləğin 0.5%-nə komissiya tətbiq olunacaq. 20000 ₼-dan çox köçürmələrdə məbləğin 0.3%-nə komissiya tətbiq olunacaq.'
     }
   ]
+  const [download, setDownload] = useState(false)
   return (
-    <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden'>
+    <div className='w-full flex flex-col items-start justify-center min-h-screen overflow-x-hidden relative'>
       <Helmet>
         <title>25 000 ₼-dək kredit əldə et!</title>
         <meta name="description" content="transfers" />
       </Helmet>
+      {
+        download && (
+          <DownloadQrBox download={download} setDownload={setDownload} />
+        )
+      }
+      <div className={`flex items-center justify-center absolute inset-0 z-39 ${download ? "bg-black/50 flex" : "hidden"}`}></div>
       <div className='flex flex-col items-center  justify-center w-full h-full '>
         <div className=" flex flex-col items-center h-full justify-center w-full rounded-4xl bg-white relative">
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
           <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
             <h2 className='text-[58px] text-[#141414] font-bold'>Xidmətləri m10-la ödə — bonuslar qazan</h2>
             <p className='text-[18px] font-medium text-[#141414]'>Artıq terminal axtarmağa ehtiyac yoxdur — bütün xidmətlər bir tətbiqdədir</p>
-            <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
+            <span onClick={() => setDownload(true)} className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
           <div className="flex items-center justify-center  pb-10">
             {
