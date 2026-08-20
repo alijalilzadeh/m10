@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Footer from '../components/Footer'
 import Services from '../components/Services'
 import '../src/App.css'
@@ -64,26 +64,51 @@ const Home = ({ homeFaq }) => {
     {
       title: 'Xaricə pul köçürmələri',
       imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c7e0cfa1a27d51240c_23642c365fd66de4bbb825068de1eece_international.svg',
-      link : '/international-transfers'
+      link: '/international-transfers'
     },
     {
       title: '25 000 ₼-dək kredit',
       imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c76c9a8584549173ed_37a597f2f2d863ebbf63450a673b5b13_loan.svg',
-      link : '/credit'
+      link: '/credit'
     },
     {
       title: 'Pul köçürmələri',
       imgUrl: 'https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68efa4c75c647b077e5c7de2_4ded7748d1c419d5530602987c546e54_transfers.svg',
-      link : '/transfers'
+      link: '/transfers'
     }
   ]
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    console.log(width)
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <div className='w-full flex flex-col items-center justify-center min-h-screen overflow-x-hidden'>
-      <div className="w-[95%] items-start justify-center h-full overflow-hidden flex flex-col">
-        <div style={{  transform: `translateX(-${slider * 100}%)`,}}className="flex  h-full transition-transform duration-500 ease-in-out">
+    <div className='flex flex-col items-center justify-center min-h-screen overflow-x-hidden'>
+      <div className="w-[95%] items-start justify-center h-full overflow-hidden flex flex-col lg:w-[95%] relative">
+        {
+          width < 1024 && (
+            <Navbar textColor={textColor} m10Logo={m10Logo} DropdownUrl={DropdownUrl} />
+
+          )
+        }
+
+        <div style={{ transform: `translateX(-${slider * 100}%)`, }} className="flex  h-full transition-transform duration-500 ease-in-out">
           {sliderData.map((item, id) => (
-            <div key={id} style={{ backgroundImage: `url(${item.imgUrl1})`, }} className="shrink-0 flex bg-no-repeat bg-cover  bg-center flex-col items-center h-full justify-start w-full rounded-4xl relative">
-              <Navbar textColor={textColor} m10Logo={m10Logo} DropdownUrl={DropdownUrl} />
+            <div key={id} style={{ backgroundImage: `url(${item.imgUrl1})`, }} className="shrink-0 flex bg-no-repeat bg-cover  bg-center flex-col items-center h-full justify-start w-full rounded-4xl ">
+              {
+                width > 1024 && (
+                  <Navbar textColor={textColor} m10Logo={m10Logo} DropdownUrl={DropdownUrl} />
+
+                )
+              }
               <div className="flex flex-col items-center justify-center gap-4 mt-4">
                 <h2 className="text-white text-[58px] font-bold">
                   {item.title}
@@ -101,9 +126,7 @@ const Home = ({ homeFaq }) => {
                   } else {
                     setSlider(slider - 1);
                   }
-                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg"
-                  alt="left arrow"
-                  className="cursor-pointer" />
+                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg" alt="left arrow" className="cursor-pointer" />
 
                 <img src={item.imgUrl2} className="bg-center bg-cover w-300" alt="" />
                 <img onClick={() => {
@@ -112,9 +135,7 @@ const Home = ({ homeFaq }) => {
                   } else {
                     setSlider(slider + 1);
                   }
-                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg"
-                  alt="right arrow"
-                  className="cursor-pointer" />
+                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg" alt="right arrow" className="cursor-pointer" />
 
               </div>
 
@@ -127,24 +148,24 @@ const Home = ({ homeFaq }) => {
           ))}
         </div>
       </div>
-      <Services serviceTitle={serviceTitle}/>
+      <Services serviceTitle={serviceTitle} />
       <Finance financeData={financeData} />
       <BirBonus />
       <div className="flex flex-col items-center justify-center w-full my-22.5 ">
-        <div className="flex flex-col items-center justify-center w-[55%] gap-6">
-          <h2 className='text-[48px] text-[#141414] font-bold text-center'>Pul məsələlərini sadələşdiririk</h2>
+        <div className="flex flex-col items-center justify-center  gap-6  w-[95%] sm:w-[90%] md:w-[95%] lg:w-[55%]">
+          <h2 className='text-[36px] text-[#141414] font-bold text-center md:text-[48px]'>Pul məsələlərini sadələşdiririk</h2>
           <div className="flex items-center justify-center gap-2 mb-3">
             <span onClick={() => setPulMeselesi('payment')} className={`text-[18px] ${pulMeselesi === 'payment' ? " text-white  bg-[#141414]" : "text-[#141414]  bg-[#F5F4F5] border border-[#141414]"} rounded-4xl cursor-pointer p-2 px-4 transition duration-200 hover:opacity-90 font-medium`}>Ödənişlər</span>
             <span onClick={() => setPulMeselesi('transfers')} className={`text-[18px] ${pulMeselesi === 'transfers' ? " text-white  bg-[#141414]" : "text-[#141414]  bg-[#F5F4F5] border border-[#141414]"} rounded-4xl border border-[#141414] cursor-pointer p-2 px-4  font-medium transition duration-200 hover:opacity-90`}>Köçürmələr</span>
           </div>
-          <video muted autoPlay loop src={`${pulMeselesi === 'payment' ? `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673df46b3cd60460813cd_bills-show-transcode.mp4` : `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673d6c5ec88584d11eb3d_transfers-show-transcode.mp4`}`}></video>
+          <video muted autoPlay loop src={`${pulMeselesi === 'payment' ? `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673df46b3cd60460813cd_bills-show-transcode.mp4` : `https://cdn.prod.website-files.com/687df8fbf77109d01f751481%2F68f673d6c5ec88584d11eb3d_transfers-show-transcode.mp4`} `} className='w-75 sm:w-82.5'></video>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-full my-22.5 ">
-        <div className="flex flex-col items-center justify-center w-[55%] gap-6">
+      <div className="flex flex-col items-center justify-center  my-22.5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[55%]">
+        <div className="flex flex-col items-center justify-center  gap-6 w-full ">
           <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2ef578fed32f07a27cf_logo-bir.svg" />
-          <h2 className='text-[48px] text-[#141414] font-bold text-center'>Biz Bir ekosisteminin bir hissəsiyik</h2>
-          <div className="flex items-center justify-between mt-2 w-[80%]">
+          <h2 className='text-[36px] text-[#141414] font-bold text-center md:text-[48px]'>Biz Bir ekosisteminin bir hissəsiyik</h2>
+          <div className="grid grid-cols-2  gap-6 mt-2 justify-items-center  w-[80%] sm:grid-cols-2 md:grid-cols-4">
             {
               birEcosistem.map((item, id) => (
                 <img src={item.imgUrl} alt='ecosystem-logo-image' className='opacity-50' />
