@@ -75,13 +75,70 @@ const Navbar = ({ textColor, DropdownUrl, m10Logo }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-full  fixed top-0  right-0 left-0 z-15 lg:hidden">
+      <div className={`flex flex-col items-center justify-center w-full  h-fit fixed top-0  right-0 left-0 z-15  lg:hidden `}>
         <div className="flex items-center justify-between w-full bg-white py-2 px-4  z-20">
           <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68dae2efcee6be6906b71ebc_m10.svg" className='w-12 flex items-center justify-center ' />
           <img onClick={() => setResponsiveNavbar(!responsiveNavbar)} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687f70adeddada30438b5e76_burger%20menu.svg" className=' cursor-pointer' />
         </div>
-        <div className={` flex-col items-center fixed h-screen -z-1 justify-center w-full  transition-all duration-200 ${responsiveNavbar ? "translate-y-0" : "-translate-y-full -top-full"} bg-white`}>
-          adsgagag
+        <div className={`flex flex-col  items-start justify-start  pt-4 overflow-y-auto   w-full rounded-b-4xl transition-all duration-200 ${responsiveNavbar ? "translate-y-0  min-h-75 pointer-events-auto" : "-translate-y-full pointer-events-none"} bg-white`}>
+          <div className="flex flex-col items-start justify-start w-full">
+            <div className="flex flex-col items-center justify-center w-full">
+              <NavLink onClick={()=> setDropDown('finance')} className={`flex items-center justify-between text-[20px] text-[#141414] opacity-95 font-semibold py-5 pl-5 pr-10 w-full transition duration-200 hover:opacity-80`}>
+                <span>
+                  Maliyyə
+                </span>
+                <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e33df3874b267affd6acb_16_icon_chevron_down_stroke.svg" />
+              </NavLink>
+              <div className={`${dropDown === 'finance' ? "flex" : "hidden"} flex-col items-start justify-start w-full `}>
+                <NavLink to='/transfers' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  Pul köçürmələri
+                </NavLink>
+
+                <NavLink to='/international-transfers' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  Beynalxalq köçürmələr
+                </NavLink>
+
+                <NavLink to='/credit' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  Kredit
+                </NavLink>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center w-full">
+              <NavLink onClick={()=> setDropDown('services')} className={`flex items-center justify-between text-[20px] text-[#141414] opacity-95 font-semibold py-5 pl-5 pr-10 w-full transition duration-200 hover:opacity-80`}>
+                <span>
+                  Xidmətlər
+                </span>
+                <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/687e33df3874b267affd6acb_16_icon_chevron_down_stroke.svg" />
+              </NavLink>
+              <div className={`${dropDown === 'services' ? "flex" : "hidden"} flex-col items-start justify-start w-full `}>
+                <NavLink to='/bakikart' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  BakıKart telefonda
+                </NavLink>
+
+                <NavLink to='/qr-pay' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  QR ilə ödə
+                </NavLink>
+
+                <NavLink to='/bills' onClick={() => setDropDown('')} className='text-[16px] text-[#141414] font-semibold py-3.75 pr-5.5 pl-10 w-full transition duration-200 hover:text-[#5e5e5e]' reloadDocument>
+                  Ödənişlər
+                </NavLink>
+              </div>
+            </div>
+
+            <NavLink className={`flex items-center justify-between text-[20px] text-[#141414] opacity-95 font-semibold py-5 pl-5 pr-10 w-full transition duration-200 hover:opacity-80`}>
+              <span>
+                Təhlükəsizlik
+              </span>
+            </NavLink>
+          </div>
+          <div className="flex items-start justify-start w-full gap-5 pl-5 py-10 ">
+            <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68eb8b735c3ba6dd6fec9bf7_24_icon_globe_stroke.svg" />
+            <div className="flex gap-2 items-center justify-center">
+              <span className='cursor-pointer text-[16px] text-[#141414] font-semibold opacity-100 transition-all duration-200 hover:opacity-70'>En</span>
+              <span className='cursor-pointer text-[16px] text-[#141414] font-semibold opacity-100 transition-all duration-200 hover:opacity-70'>Ru</span>
+            </div>
+          </div>
         </div>
       </div>
     </>

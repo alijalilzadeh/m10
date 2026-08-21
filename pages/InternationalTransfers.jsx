@@ -85,10 +85,10 @@ const InternationalTransfers = () => {
         <meta name="description" content="transfers" />
       </Helmet>
       <div className='flex flex-col items-center  justify-center w-full h-full '>
-        <div className=" flex flex-col items-center h-full justify-center w-full rounded-4xl bg-white relative">
+        <div className=" flex flex-col items-center h-full justify-center  rounded-4xl  w-[99%] bg-white relative overflow-hidden">
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
-          <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
-            <h2 className='text-[58px] text-[#141414] font-bold w-full text-center leading-18'>Xaricə komissiyasız pul köçür</h2>
+          <div className="flex flex-col items-center justify-center gap-6 mb-8 py-30 px-10 lg:py-5">
+            <h2 className='text-[40px] text-[#141414] font-bold w-full text-center leading-15 sm:text-[48px] md:text-[58px]'>Xaricə komissiyasız pul köçür</h2>
             <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
           <div className="flex items-center justify-center  pb-10">
@@ -99,11 +99,11 @@ const InternationalTransfers = () => {
             }
           </div>
         </div>
-        <div className='flex flex-col  items-center justify-center gap-10 w-full mt-15 mb-10'>
-          <div className='flex  items-center justify-center gap-6 w-[50%] '>
+        <div className='flex flex-col  items-center justify-center gap-10  mt-15 mb-10 w-[80%] sm:w-[90%] md:w-[95%] lg:w-[55%] '>
+          <div className='flex flex-col items-center justify-center gap-3 w-full  md:flex-row md:gap-6'>
             {
               internationalTransfersData.map((item, id) => (
-                <div key={id} className="flex flex-col items-center gap-4 justify-start w-[28%] bg-white rounded-4xl px-4 py-8 min-h-70">
+                <div key={id} className="flex flex-col items-center gap-4 justify-start  bg-white rounded-4xl px-4 py-8 w-full min-h-50 md:min-h-70 md:w-[28%] lg:w-[28%]">
                   <img src={item.url} />
                   <div className="flex flex-col items-center justify-center gap-2">
                     <h2 className='text-[#141414]  text-[20px] text-center font-semibold'>{item.title}</h2>
@@ -114,12 +114,12 @@ const InternationalTransfers = () => {
             }
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center w-[55%] mb-22.5">
-          <h2 className='text-[#141414] text-[48px] font-bold text-center leading-6 my-14'>Necə köçürmək olar</h2>
-          <div className="flex  flex-wrap  gap-6 mt-5">
+        <div className="flex flex-col items-center justify-center  mb-22.5  w-[90%] lg:w-[58%]">
+          <h2 className='text-[#141414] text-[36px]  font-bold text-center leading-10 my-14 md:text-[48px]'>Necə köçürmək olar</h2>
+          <div className="grid grid-cols-1 justify-items-center gap-6 mt-5 md:grid-cols-2">
             {
               howTo.map((item, id) => (
-                <div key={id} className="flex flex-col items-start w-100 justify-start relative ">
+                <div key={id} className="flex flex-col items-start  justify-start relative  w-76 sm:w-90  md:w-82 lg:w-100">
                   <span className='absolute top-4 left-4 items-center flex justify-center w-8 h-8 rounded-full text-[#141414] font-medium bg-[#FFFFFF] border border-[#141414]'>{id + 1}</span>
                   <div className="flex items-center justify-center  bg-[#EBE8E7] rounded-4xl mb-6">
                     <img src={item.url} className='flex object-cover w-full' />
@@ -131,33 +131,33 @@ const InternationalTransfers = () => {
           </div>
         </div>
         <CountryTransition />
-        <div className="flex flex-col items-center justify-center w-[55%] mt-22.5">
-          <h2 className='text-[#141414] text-[48px] font-bold text-center leading-6  my-14'>Hara köçürmək olar</h2>
-          <div className="flex items-center justify-center w-full gap-6">
+        <div className="flex flex-col items-center justify-center mt-22.5 w-full">
+          <h2 className='text-[#141414] text-[36px] font-bold text-center leading-15  my-14 md:text-[48px]'>Hara köçürmək olar</h2>
+          <div className="grid grid-cols-1  justify-items-center w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
             {
               whereToTransfer.map((item, id) => (
-                <Link  to={item.link} className="flex items-center justify-between w-full px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90" reloadDocument>
+                <Link  to={item.link} className="flex items-center justify-between  px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90 w-64" reloadDocument>
                   <div className="flex items-center justify-center gap-3">
                     <img src={item.url} />
                     <h2 className='text-[#141414] text-[18px] font-medium '>{item.title}</h2>
                   </div>
-                  <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68ee5d43e9e6a4e9a26ff8f7_a06411de213f44c89d1794a8cc77e62f_arrow%20right.svg" alt="arrow-right icon" className='flex object-cover transition transform duration-400 group-hover:translate-x-2' />
+                  <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68ee5d43e9e6a4e9a26ff8f7_a06411de213f44c89d1794a8cc77e62f_arrow%20right.svg" alt="arrow-right icon" className='hidden object-cover transition transform duration-400 group-hover:translate-x-2 lg:flex' />
                 </Link>
               ))
             }
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center w-[55%] mt-22.5">
-          <h2 className='text-[#141414] text-[48px] font-bold text-center leading-6  my-14'>Haradan köçürmə qəbul etmək olar</h2>
+        <div className="flex flex-col items-center justify-center mt-22.5 w-full">
+          <h2 className='text-[#141414] text-[36px] font-bold text-center leading-10 my-14 md:text-[48px]'>Haradan köçürmə qəbul etmək olar</h2>
           <div className="flex items-center justify-center w-full gap-6">
             {
               whereToTransfer.slice(0, 1).map((item, id) => (
-                <Link to={item.link} className="flex items-center justify-between w-1/3 px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90" reloadDocument>
+                <Link to={item.link} className="flex items-center justify-between w-64 px-4 py-3 rounded-3xl bg-[#ebe8e7] group opacity-100 transition  duration-200 hover:opacity-90" reloadDocument>
                   <div className="flex items-center justify-center gap-3">
                     <img src={item.url} />
                     <h2 className='text-[#141414] text-[18px] font-medium '>{item.title}</h2>
                   </div>
-                  <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68ee5d43e9e6a4e9a26ff8f7_a06411de213f44c89d1794a8cc77e62f_arrow%20right.svg" alt="arrow-right icon" className='flex object-cover transition transform duration-400 group-hover:translate-x-2' />
+                  <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/68ee5d43e9e6a4e9a26ff8f7_a06411de213f44c89d1794a8cc77e62f_arrow%20right.svg" alt="arrow-right icon" className='hidden object-cover transition transform duration-400 group-hover:translate-x-2 lg:flex' />
                 </Link>
               ))
             }

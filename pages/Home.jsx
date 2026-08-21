@@ -92,7 +92,7 @@ const Home = ({ homeFaq }) => {
   }, []);
   return (
     <div className='flex flex-col items-center justify-center min-h-screen overflow-x-hidden'>
-      <div className="w-[95%] items-start justify-center h-full overflow-hidden flex flex-col lg:w-[95%] relative">
+      <div className="w-[99%] h-full flex flex-col items-start justify-center overflow-hidden relative lg:w-[95%] ">
         {
           width < 1024 && (
             <Navbar textColor={textColor} m10Logo={m10Logo} DropdownUrl={DropdownUrl} />
@@ -102,15 +102,15 @@ const Home = ({ homeFaq }) => {
 
         <div style={{ transform: `translateX(-${slider * 100}%)`, }} className="flex  h-full transition-transform duration-500 ease-in-out">
           {sliderData.map((item, id) => (
-            <div key={id} style={{ backgroundImage: `url(${item.imgUrl1})`, }} className="shrink-0 flex bg-no-repeat bg-cover  bg-center flex-col items-center h-full justify-start w-full rounded-4xl ">
+            <div key={id} style={{ backgroundImage: `url(${item.imgUrl1})`, }} className="shrink-0 flex bg-no-repeat bg-cover  bg-center flex-col items-center h-full justify-start w-full rounded-4xl mt-16 lg:mt-0">
               {
                 width > 1024 && (
                   <Navbar textColor={textColor} m10Logo={m10Logo} DropdownUrl={DropdownUrl} />
 
                 )
               }
-              <div className="flex flex-col items-center justify-center gap-4 mt-4">
-                <h2 className="text-white text-[58px] font-bold">
+              <div className="flex flex-col items-center justify-center gap-4 pt-20 lg:pt-4">
+                <h2 className="text-white text-[48px] font-bold md:text-[58px]">
                   {item.title}
                 </h2>
 
@@ -126,7 +126,7 @@ const Home = ({ homeFaq }) => {
                   } else {
                     setSlider(slider - 1);
                   }
-                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg" alt="left arrow" className="cursor-pointer" />
+                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a29fca44d816d95010_36_icon_chevron_left_stroke.svg" alt="left arrow" className="cursor-pointer absolute left-2 top-1/2" />
 
                 <img src={item.imgUrl2} className="bg-center bg-cover w-300" alt="" />
                 <img onClick={() => {
@@ -135,7 +135,7 @@ const Home = ({ homeFaq }) => {
                   } else {
                     setSlider(slider + 1);
                   }
-                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg" alt="right arrow" className="cursor-pointer" />
+                }} src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/6905d1a257490f8f924cec57_36_icon_chevron_right_stroke.svg" alt="right arrow" className="cursor-pointer absolute right-2 top-1/2" />
 
               </div>
 

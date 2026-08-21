@@ -41,24 +41,24 @@ const CountryTransition = () => {
 ]
   return (
     <div className='flex flex-col items-center justify-center w-full gap-10 py-10 bg-white'>
-      <div className="flex flex-col items-center justify-center w-[55%]">
-        <h2 className='text-[48px] text-[#141414] font-bold mt-22.5 mb-14 w-[60%] text-center'>150+ ölkəyə komissiyasız pul köçür</h2>
+      <div className="flex flex-col items-center justify-center w-full lg:w-[55%]">
+        <h2 className='text-[36px] text-[#141414] font-bold mt-22.5 mb-14 w-[55%] leading-10 text-center md:text-[48px] md:w-[60%]'>150+ ölkəyə komissiyasız pul köçür</h2>
       </div>
       <div className="flex items-center justify-center overflow-hidden w-[95%]">
         <div className="flex items-center justify-center gap-2 w-full moving-box">
           {
             transitionData.map((item, id) => (
-              <img src={item.url} className='w-30 h-30 mr-5' />
+              <img src={item.url} className='w-21 h-21 mr-5 md:w-30 md:h-30' />
             ))
           }
           {
             transitionData.map((item, id) => (
-              <img src={item.url} className='w-30 h-30 mr-5' />
+              <img src={item.url} className='w-21 h-21 mr-5 md:w-30 md:h-30' />
             ))
           }
           {
             transitionData.map((item, id) => (
-              <img src={item.url} className='w-30 h-30 mr-5' />
+              <img src={item.url} className='w-21 h-21 mr-5 md:w-30 md:h-30' />
             ))
           }
         </div>

@@ -59,23 +59,23 @@ const Transfer = () => {
   ]
   const Faqdata = [
     {
-      q:'m10-da pul göndərmək, qəbul etmək və ya istəmək üçün FİN ilə qeydiyyatdan keçmək lazımdır?',
+      q: 'm10-da pul göndərmək, qəbul etmək və ya istəmək üçün FİN ilə qeydiyyatdan keçmək lazımdır?',
       a: 'Bəli. Pul göndərmək, qəbul etmək və istəmək üçün FİN ilə qeydiyyatdan keçməlisən – bu, hesabının təhlükəsizliyini qoruyur və qanunvericilik tələblərinə uyğunluğunu təmin edir.'
     },
     {
-      q:'Pulqabılar arasında edilən köçürmələrə komissiya tətbiq olunur?',
+      q: 'Pulqabılar arasında edilən köçürmələrə komissiya tətbiq olunur?',
       a: 'Xeyr. m10-da pulqabılar arasında köçürmələr tamamilə komissiyasızdır.'
     },
     {
-      q:'m10 hesabı olmayan birinə sadəcə telefon nömrəsi ilə pul göndərə bilərəm?',
+      q: 'm10 hesabı olmayan birinə sadəcə telefon nömrəsi ilə pul göndərə bilərəm?',
       a: 'Bəli. Sadəcə alıcının telefon nömrəsini daxil etməklə ona pul göndərə bilərsən. Qeydiyyatdan keçib pulu almaq üçün alıcıya SMS ilə təlimat göndəriləcək.'
     },
     {
-      q:'Pulqabından karta köçürmələrə limit və komissiya var?',
+      q: 'Pulqabından karta köçürmələrə limit və komissiya var?',
       a: 'Pulqabından karta köçürmələrdə müəyyən limit və kiçik komissiya tətbiq olunur. 5000 ₼-dan çox köçürmələrdə məbləğin 0.5%-nə komissiya tətbiq olunacaq. 20000 ₼-dan çox köçürmələrdə məbləğin 0.3%-nə komissiya tətbiq olunacaq.'
     },
     {
-      q:'Pul sorğusunu neçə dəfə və neçə nəfərə göndərə bilərəm?',
+      q: 'Pul sorğusunu neçə dəfə və neçə nəfərə göndərə bilərəm?',
       a: 'Gündə maksimum 20 pul sorğusu göndərə və hər bir sorğuya maksimum 20 nəfər əlavə edə bilərsən.'
     }
   ]
@@ -86,13 +86,13 @@ const Transfer = () => {
         <meta name="description" content="transfers" />
       </Helmet>
       <div className='flex flex-col items-center gap-15 justify-center w-full h-full '>
-        <div className=" flex flex-col items-center h-full justify-center w-full rounded-4xl bg-white relative">
+        <div className=" flex flex-col items-center h-full justify-center rounded-4xl w-[99%] bg-white relative overflow-hidden">
           <Navbar textColor={textColor} DropdownUrl={DropdownUrl} m10Logo={m10Logo} />
-          <div className="flex flex-col items-center justify-center gap-6 py-5 mb-8">
-            <h2 className='text-[58px] text-[#141414] font-bold'>Pulun bir m10-dan o birinə - dərhal!</h2>
+          <div className="flex flex-col items-center justify-center gap-6  mb-8 py-30 px-10 lg:py-5">
+            <h2 className='text-[48px] text-[#141414] text-center leading-14 font-bold md:text-[58px]'>Pulun bir m10-dan o birinə - dərhal!</h2>
             <span className={`text-[18px]  text-white  bg-[#141414] rounded-4xl cursor-pointer py-4 px-6 transition duration-200 hover:opacity-90 font-bold`}>Tətbiqi yüklə</span>
           </div>
-          <div className="flex items-center justify-center gap-6 pb-10">
+          <div className="flex items-center justify-center gap-2 pb-10 lg:gap-6">
             {
               imgUrls.map((item, id) => (
                 <img src={item.url} />
@@ -101,18 +101,18 @@ const Transfer = () => {
           </div>
         </div>
         <TarifBoxes />
-        <div className="flex flex-col items-center gap-6 justify-center w-full mb-15">
+        <div className="flex flex-col items-center gap-12 justify-center w-[85%] mb-15  lg:w-[50%]">
           {
             rowData.slice(0, 4).map((item, id) => (
-              <div className={`flex ${id % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center justify-center gap-10 w-[50%]`}>
+              <div className={`flex flex-col items-center justify-center gap-10 w-full  ${id % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} md:flex-row`}>
                 <img src={item.url} />
-                <p className='text-[20px] text-[#141414] font-semibold leading-6'>{item.title}</p>
+                <p className='text-[18px] text-[#141414] font-semibold leading-6 text-center md:text-[20px] md:text-left'>{item.title}</p>
               </div>
             ))
           }
         </div>
-        <div className="flex flex-col items-center justify-center w-full gap-6 bg-white pt-22.5 pb-10 rounded-4xl">
-          <h2 className='text-[58px] text-[#141414] font-bold'>Karta pul köçürmək? Çox sadə!</h2>
+        <div className="flex flex-col items-center justify-center w-[99%] gap-6 bg-white pt-22.5 pb-10 rounded-2xl overflow-hidden lg:rounded-4xl">
+          <h2 className='text-[48px] text-[#141414] font-bold text-center leading-17 md:text-[58px]'>Karta pul köçürmək? Çox sadə!</h2>
           <div className="flex items-center justify-center gap-6">
             {
               arcData.map((item, id) => (
@@ -121,14 +121,14 @@ const Transfer = () => {
             }
           </div>
         </div>
-        <div className='flex flex-col  items-center justify-center gap-10 w-full mb-10'>
-          <div className='flex  items-center justify-center gap-6 w-[50%] '>
+        <div className='flex flex-col  items-center justify-center gap-10  mb-10 w-[90%]  md:w-[55%] lg:w-[50%]'>
+          <div className='flex flex-col items-center justify-center gap-6 w-full md:flex-row '>
             {
               tarifData.map((item, id) => (
-                <div key={id} className="flex flex-col items-center gap-4 justify-start w-[28%] bg-white rounded-4xl px-4 py-8 min-h-70">
+                <div key={id} className="flex flex-col items-center gap-4 justify-start bg-white rounded-4xl px-4 py-8 w-full min-h-50 md:min-h-70  lg:w-[28%]">
                   <img src={item.url} />
                   <div className="flex flex-col items-center justify-center gap-2">
-                    <h2 className='text-[#141414] text-[20px] font-bold text-center leading-6'>{item.title}</h2>
+                    <h2 className='text-[#141414] text-[20px] font-semibold text-center leading-6'>{item.title}</h2>
                     <p className='selection:bg-[#99B3E8] text-[14px] text-[#979797] text-center font-normal'>{item.desc}</p>
                   </div>
                 </div>
@@ -137,25 +137,25 @@ const Transfer = () => {
           </div>
           <Link to='/rates' className='underline text-[#141414] text-[14px] font-[550] transition duration-200 opacity-100 hover:opacity-80' reloadDocument>Tariflər haqqında öyrən</Link>
         </div>
-        <div className="flex flex-col items-center gap-6 justify-center w-full mb-15">
+        <div className="flex flex-col items-center gap-12 justify-center w-[85%] mb-15  lg:w-[50%]">
           {
             rowData.slice(4, 7).map((item, id) => (
-              <div className={`flex ${id % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center justify-center gap-10 w-[50%]`}>
+              <div className={`flex flex-col items-center justify-center gap-10 w-full  ${id % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} md:flex-row`}>
                 <img src={item.url} />
-                <p className='text-[20px] text-[#141414] font-semibold leading-6'>{item.title}</p>
+                <p className='text-[18px] text-[#141414] font-semibold leading-6 text-center md:text-[20px] md:text-left'>{item.title}</p>
               </div>
             ))
           }
         </div>
         <div className='flex flex-col items-center justify-center w-full gap-6 bg-white py-22.5  rounded-4xl'>
-          <div className="flex flex-col items-center gap-4 justify-center w-[58%]">
+          <div className="flex flex-col items-center gap-4 justify-center w-[90%] lg:w-[58%]">
             <img src="https://cdn.prod.website-files.com/687df8fbf77109d01f751481/69046143eeb0535d84680827_c9d9283e103cd4755d225385e3aca1b9_money-request.svg" alt="money-request" />
-            <h2 className='text-[48px] text-[#141414] font-bold text-center leading-15 mb-3'>Heç bir narahatlıq olmadan - pul topla, göndər və borc al</h2>
-            <div className="flex  flex-wrap  gap-6 mt-5">
+            <h2 className='text-[36px] text-[#141414] font-bold text-center w-full leading-15 mb-3 md:text-[48px]'>Heç bir narahatlıq olmadan - pul topla, göndər və borc al</h2>
+            <div className="grid grid-cols-1 justify-items-center gap-6 mt-5 md:grid-cols-2">
               {
                 moneyReqData.map((item, id) => (
-                  <div key={id} className="flex flex-col items-start w-100 justify-start relative ">
-                    <span className='absolute top-4 left-4 items-center flex justify-center w-8 h-8 rounded-full text-[#141414] font-medium bg-[#FFFFFF] border border-[#141414]'>{id+1}</span>
+                  <div key={id} className="flex flex-col items-start justify-start relative w-76 sm:w-90  md:w-82 lg:w-100">
+                    <span className='absolute top-4 left-4 items-center flex justify-center w-8 h-8 rounded-full text-[#141414] font-medium bg-[#FFFFFF] border border-[#141414]'>{id + 1}</span>
                     <div className="flex items-start justify-start  bg-[#EBE8E7] rounded-4xl mb-6">
                       <img src={item.url} className='flex object-cover w-full h-70' />
                     </div>
